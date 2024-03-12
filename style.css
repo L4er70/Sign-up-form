@@ -2,6 +2,11 @@
     margin: 0;
     padding: 0;
 }
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('sources/Norse-Bold\ \(1\).otf') format('opentype');
+}
+
 
 body {
     height: 100vh;
@@ -9,14 +14,45 @@ body {
 }
 
 body .imgBx {
+    display: flex;
+    align-items: center;
+    position: relative;
     width: 30%;
     height: 100%;
+    background-image: url('sources/bg.jpg');
+    background-size: cover;
+
 }
 
-body .imgBx img {
+.logo {
     width: 100%;
-    height: 100%;
+    display: flex;
+    align-items: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5); 
 }
+
+.logo img{
+    max-width: 100px;
+    height: auto;
+    margin-right: 10px;
+    margin-left: 50px;
+}
+.logo span{
+    font-family: 'MyCustomFont',sans-serif;
+    font-size: 40px;
+
+}
+.imgBx .credit{
+    color: #ccc;
+    font-size: 15px;
+    position: absolute;
+    top: 95%;
+    left: 45%;
+}
+
+
+
 
 body .container {
     height: 100%;
@@ -37,6 +73,7 @@ body .container {
 
 .formContainer h2 {
     margin-bottom: 20px;
+    margin-left: 30px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -62,6 +99,10 @@ form {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
+    
+}
+input:invalid{
+    border-color: red;
 }
 
 .formContainer label {
@@ -70,16 +111,22 @@ form {
 }
 
 .footer {
-    padding: 50px; /* Reduced from 100px */
+    padding: 50px; 
 }
 
 .footer button {
-    background-color: green;
-    padding: 10px 30px; /* Shorthand for top/bottom, left/right */
+    background-color: #596D48;
+    padding: 10px 30px;
     font-size: 15px;
     border-radius: 5px;
+    color: white;
 }
-
+section{
+    margin: 100px 30px;
+}
+section p{
+    margin-top: 30px;
+}
 article {
     color: black;
     font-size: 25px;

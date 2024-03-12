@@ -8,12 +8,19 @@
 </head>
 <body>
     <div class="imgBx">
-        <img src="sources/bg.jpg" alt="">
+        <div class="logo">
+            <img src="sources/odin-lined.png">
+            <span>Odin</span>
+        </div>
+        <span class="credit">Photo by </span>
+        
     </div>
     <div class="container">
         <section>
-            <article>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. Sign up now to get started.
- You know you want to. </article>
+            <article>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. 
+                Sign up <i>now</i> to get started.<br>
+                <p>You know you want to.</p>
+  </article>
         </section>
         <div class="formContainer">
             <h2>lets do this!</h2>
@@ -21,39 +28,77 @@
                 <div class="form-row">
                     <div class="name">
                         <label for="name">First name</label><br>
-                        <input type="text">
+                        <input type="text" name="name" required>
                     </div>
                     <div class="lastName">
                         <label for="lastName">Last name</label><br>
-                        <input type="text">
+                        <input type="text" name="lastName" required>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="email">
                         <label for="email">Email</label><br>
-                        <input type="email">
+                        <input type="email" name="email" required>
                     </div>
                     <div class="phone">
                         <label for="phone">Phone number</label><br>
-                        <input type="tel">
+                        <input type="tel" name="tel" required>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="password">
                         <label for="password">Password</label><br>
-                        <input type="password">
+                        <input id="password" type="password" name="password" required><br>
+                        
                     </div>
                     <div class="conPass">
                         <label for="password">Confirm password</label><br>
-                        <input type="password">
+                        <input id="conPass" type="password" name="password" required><br>
+                        <span class="error"></span>
                     </div>
                 </div>
             </form>
         </div>
         <div class="footer">
-            <button type="submit">Confirm</button>
+            <button type="submit">Create account</button>
             <span>Already have an account ? <a href="#">Log in</a></span>
         </div>
     </div>
+    <script>
+        let errorMessage = document.querySelector('.error');
+        let passDiv = document.getElementsByClassName('password');
+        let confirmDiv= document.getElementsByClassName('conPass');
+        let password = document.getElementById('password');
+        console.log(password.id)
+        let conPass = document.getElementById('conPass');
+
+
+       password.addEventListener('input',function(){
+        if(password.value === conPass.value){
+            errorMessage.textContent = 'its ok'
+            errorMessage.style.color = 'green'
+            
+        }else{
+            errorMessage.textContent = 'does not match!'
+            errorMessage.style.color = 'red'
+        }
+       })
+       conPass.addEventListener('input', function(){
+        if(password.value=== conPass.value){
+            errorMessage.textContent = 'its ok!'
+            errorMessage.style.color = 'green'
+        }else{
+            errorMessage.textContent = 'Does not match with your password!'
+            errorMessage.style.color = 'red';
+        }
+       })
+
+        
+        
+        
+
+       
+
+    </script>
 </body>
 </html>
